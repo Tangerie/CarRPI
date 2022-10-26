@@ -16,6 +16,7 @@ namespace HelloWorld
             Image im = Raylib.GenImageColor(1024, 600, Color.RED);
 
             
+            bool exit = false;
 
             for (int x = 0; x < 1024; x++)
             {
@@ -31,7 +32,7 @@ namespace HelloWorld
 
             Raylib.UnloadImage(im);
 
-            while (!Raylib.WindowShouldClose())
+            while (!Raylib.WindowShouldClose() && !exit)
             {
                 delta = 1000.0 / Raylib.GetFPS();
                 Raylib.BeginDrawing();
@@ -47,6 +48,10 @@ namespace HelloWorld
 
                 if(Raylib.IsMouseButtonDown(MouseButton.MOUSE_LEFT_BUTTON)) {
                     Raylib.DrawCircle(Raylib.GetTouchX(), Raylib.GetTouchY(), 30, Color.BLUE);
+
+                    if(Raylib.GetTouchX() < 20 &&  Raylib.GetTouchY() < 20) {
+                        exit = true;
+                    }
                 }
 
 

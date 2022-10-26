@@ -45,6 +45,9 @@ namespace HelloWorld
                 Raylib.DrawText("X: " + Raylib.GetTouchX().ToString(), 10, 70, 20, Color.RED);
                 Raylib.DrawText("Y: " + Raylib.GetTouchY().ToString(), 10, 100, 20, Color.RED);
 
+                if(Raylib.IsMouseButtonDown(MouseButton.MOUSE_LEFT_BUTTON)) {
+                    Raylib.DrawCircle(Raylib.GetTouchX(), Raylib.GetTouchY(), 30, Color.BLUE);
+                }
 
 
                 Raylib.EndDrawing();

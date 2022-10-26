@@ -28,7 +28,7 @@ namespace HelloWorld {
                     y += dir * delta;
                 }
 
-                Raylib.DrawText("FPS: " + y.ToString(), 10, 10, 20, Color.RED);
+                Raylib.DrawText("FPS: " + Raylib.GetFPS().ToString(), 10, 10, 20, Color.RED);
                 Raylib.DrawText("D: " + delta.ToString(), 10, 40, 20, Color.RED);
                 Raylib.DrawText("X: " + Raylib.GetTouchX().ToString(), 10, 70, 20, Color.RED);
                 Raylib.DrawText("Y: " + Raylib.GetTouchY().ToString(), 10, 100, 20, Color.RED);
